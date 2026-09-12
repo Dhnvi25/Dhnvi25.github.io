@@ -1,0 +1,228 @@
+/* 
+  Apple-Inspired Design Tokens 
+*/
+:root {
+    --bg-color: #fbfbfd;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --card-bg: #ffffff;
+    --accent-color: #0071e3;
+    --accent-hover: #0077ED;
+    --border-radius: 18px;
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* The quintessential Apple font stack */
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em; /* Tight letter spacing typical of Apple headers */
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 24px;
+}
+
+/* Hero Section */
+.hero {
+    margin-bottom: 72px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+.profile-photo {
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    border: 4px solid var(--card-bg);
+}
+
+.profile-text {
+    text-align: left;
+}
+
+.name {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 24px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Links Section */
+.links-section {
+    margin-bottom: 64px;
+}
+
+.contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.link-card {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); /* Extremely soft shadow */
+    transition: var(--transition);
+}
+
+.link-card:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    margin-right: 16px;
+}
+
+.text {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+/* Certifications Section */
+.cert-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cert-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.cert-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cert-info h3 {
+    font-size: 21px;
+    margin-bottom: 4px;
+}
+
+.cert-info p {
+    font-size: 15px;
+    color: var(--text-secondary);
+}
+
+.credential-btn {
+    background-color: var(--bg-color);
+    color: var(--accent-color);
+    padding: 10px 20px;
+    border-radius: 999px; /* Pill shape */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.credential-btn:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.no-credential {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 640px) {
+    .container {
+        padding: 48px 20px;
+    }
+    
+    .profile-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .profile-text {
+        text-align: center;
+    }
+
+    .name {
+        font-size: 42px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .cert-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 24px;
+    }
+}
